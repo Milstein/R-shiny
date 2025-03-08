@@ -1,4 +1,5 @@
 library(shiny)
+library(here)
 
 # Define server logic required to generate and plot a random distribution
 server <- function(input, output, session) {
@@ -8,6 +9,10 @@ server <- function(input, output, session) {
     # generate an rnorm distribution and plot it
     dist <- rnorm(input$obs)
     hist(dist)
+  })
+
+  output$testdir <- renderText({
+      here::here('test')
   })
 
 }
@@ -30,7 +35,8 @@ ui <- fluidPage(
     
     # Show a plot of the generated distribution
     mainPanel(
-      plotOutput("distPlot")
+      plotOutput("distPlot"),
+      verbatimTextOutput("testdir")
     )
   )
 )

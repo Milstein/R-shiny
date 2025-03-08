@@ -1,3 +1,2 @@
-FROM dukegcb/openshift-shiny-verse:4.1.2
-# RUN install2.r here
-ADD ./src /srv/code
+FROM base-shiny-app
+ADD ./examples/two-phase-build/src /srv/code
