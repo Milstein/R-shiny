@@ -1,7 +1,4 @@
-# FROM dukegcb/openshift-shiny-verse:4.0.2
-# # RUN install2.r here
-# COPY ./src /srv/code
-FROM alpine:latest
+from alpine:latest
 RUN apk add --no-cache py3-pip \
     && pip3 install --upgrade pip
 
