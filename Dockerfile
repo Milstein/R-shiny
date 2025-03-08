@@ -1,3 +1,3 @@
 FROM dukegcb/openshift-shiny-verse:4.0.2
 # RUN install2.r here
-ADD ./src /srv/code
+COPY ./src /srv/code
